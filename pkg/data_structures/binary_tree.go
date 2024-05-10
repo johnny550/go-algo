@@ -1,17 +1,17 @@
-package trees
+package datastructures
 
-type Node struct {
+type TreeNode struct {
 	Key        int
-	LeftChild  *Node
-	RightChild *Node
+	LeftChild  *TreeNode
+	RightChild *TreeNode
 }
 
-func (n *Node) Insert(key int) {
+func (n *TreeNode) Insert(key int) {
 	if key >= n.Key {
 		// go right
 		// insert if right child is null
 		if n.RightChild == nil {
-			n.RightChild = &Node{Key: key}
+			n.RightChild = &TreeNode{Key: key}
 			return
 		}
 		// otherwise the rerun the same logic on existing right child: do I go left or right?
@@ -21,7 +21,7 @@ func (n *Node) Insert(key int) {
 	// go left
 	// insert if left child is null
 	if n.LeftChild == nil {
-		n.LeftChild = &Node{Key: key}
+		n.LeftChild = &TreeNode{Key: key}
 		return
 	}
 	// otherwise the re-run the same logic on existing left child: do I go left or right?
@@ -29,7 +29,7 @@ func (n *Node) Insert(key int) {
 
 }
 
-func (n *Node) Search(key int) bool {
+func (n *TreeNode) Search(key int) bool {
 	if key > n.Key {
 		// go right
 		// if the target child isn't in the tree, don't waste time trying to get its key
