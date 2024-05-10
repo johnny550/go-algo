@@ -58,7 +58,7 @@ func main() {
 
 	m := &sorting.MaxHeap{}
 	fmt.Printf("Initial status of the heap: %v\n", m)
-	buildHeap := []int{10, 30, 20, 75}
+	buildHeap := []int{1, 10, 30, 20, 75, 9, 100, 25, 15}
 	for _, v := range buildHeap {
 		m.Insert(v)
 		fmt.Printf("m: %v\n", m)

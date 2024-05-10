@@ -55,9 +55,10 @@ func (m *MaxHeap) maxHeapifyDow(index int) {
 			m.swap(index, childToCompare)
 			index = childToCompare
 			leftChild, rightChild = getLeftChild(index), getRightChild(index)
+		} else {
+			// otherwise, the element is at the right spot. stop the heapify
+			return
 		}
-		// otherwise, the element is at the right spot. stop the heapify
-		return
 	}
 }
 
